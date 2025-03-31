@@ -63,3 +63,9 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+
+gem "avo"
+gem "avo-advanced", source: "https://packager.dev/avo-hq"
+
+gem "view_component"
