@@ -67,5 +67,5 @@ end
 
 gem "avo"
 gem "avo-advanced", source: "https://packager.dev/avo-hq"
-
+gem "friendly_id"
 gem "view_component"
