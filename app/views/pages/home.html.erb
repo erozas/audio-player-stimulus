@@ -1,0 +1,9 @@
+<div class="relative">
+  <div class="absolute top-10 right-16">
+    <%= render DarkModeToggleComponent.new %>
+  </div>
+</div>
+
+<div class="max-w-md h-screen flex justify-center items-center mx-auto">
+  <%= render AudioPlayerComponent.new(url: url_for(@episode.audio), title: @episode.name, author: "John Doe") %>
+</div>
