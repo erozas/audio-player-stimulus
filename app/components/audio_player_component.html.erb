@@ -1,0 +1,47 @@
+<div data-controller="audio-player"
+    data-audio-player-url-value="<%= @url %>"t
+    class="<%= container_classes %>">
+  <div class="<%= track_info_container_classes %>">
+    <h5 class="<%= track_title_classes %>"><%= @title %></h5>
+    <p class="<%= track_author_classes %>"><%= @author %></p>
+  </div>
+  <div class="flex items-center justify-between gap-x-3">
+    <div data-audio-player-target="currentTime" class="<%= time_classes %>">--:--</div>
+    
+    <!-- Outer container with no overflow hidden -->
+    <div class="relative flex-1 h-2.5" data-action="click->audio-player#seek">
+      <!-- Progress bar background (full width) -->
+      <div class="<%= progress_bar_classes %> absolute inset-0">
+        <!-- Progress bar fill with overflow hidden -->
+        <div data-audio-player-target="progressBarFill" style="width: 0" class="<%= progress_bar_fill_classes %> h-full"></div>
+      </div>
+      
+      <!-- Handle positioned relative to the outer container -->
+      <div data-audio-player-target="progressBar" class="absolute inset-0 pointer-events-none">
+        <div data-audio-player-target="progressHandle" 
+            class="absolute top-[6px] -translate-x-1/2 -translate-y-1/2 w-3 h-3 z-30 bg-slate-400 shadow-md rounded-full pointer-events-auto cursor-pointer"
+            style="left: 0%">
+        </div>
+      </div>
+    </div>
+    
+    <div data-audio-player-target="duration" class="<%= time_classes %>">--:--</div>
+  </div>
+  <div data-audio-player-target="controls" class="<%= controls_container_classes %>">
+    <button class="<%= secondary_button_classes %>">
+      <i class="far fa-arrow-rotate-left <%= secondary_button_icon_classes %>"></i>
+    </button>
+    <button class="<%= secondary_button_classes %>">
+      <i class="fas fa-step-backward <%= secondary_button_icon_classes %>"></i>
+    </button> 
+    <button class="<%= play_button_classes %>" data-action="audio-player#togglePlay">
+      <i class="fas fa-play <%= play_button_icon_classes %>" data-audio-player-target="playIcon"></i>
+    </button>
+    <button class="<%= secondary_button_classes %>">
+      <i class="fas fa-step-forward <%= secondary_button_icon_classes %>"></i>
+    </button>
+    <button class="<%= secondary_button_classes %>">
+      <i class="far fa-arrow-rotate-right <%= secondary_button_icon_classes %>"></i>
+    </button>
+  </div>
+</div>
