@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
-import HelloController from "./hello_controller"
-application.register("hello", HelloController)
+import AudioPlayerController from "./audio_player_controller"
+application.register("audio-player", AudioPlayerController)
+
+import DarkModeToggleController from "./dark_mode_toggle_controller"
+application.register("dark-mode-toggle", DarkModeToggleController)
